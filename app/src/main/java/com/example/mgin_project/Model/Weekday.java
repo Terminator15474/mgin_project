@@ -8,19 +8,19 @@ import java.util.LinkedList;
 
 public class Weekday implements Serializable {
     WeekdayDesc weekday;
-    LinkedList<Medicine> dueOn;
+    LinkedList<Medicine> medicines;
 
-    public Weekday(WeekdayDesc weekday, Medicine[] dueOn) {
+    public Weekday(WeekdayDesc weekday, Medicine[] medicines) {
         this.weekday = weekday;
-        this.dueOn.addAll(Arrays.asList(dueOn));
+        this.medicines.addAll(Arrays.asList(medicines));
     }
 
     public void addMedicine(Medicine med) {
-        dueOn.add(med);
+        medicines.add(med);
     }
 
     public boolean removeMedicine(Medicine med) {
-        return dueOn.remove(med);
+        return medicines.remove(med);
     }
 
     @Override
@@ -28,5 +28,9 @@ public class Weekday implements Serializable {
         if(!(obj instanceof Weekday)) return false;
         if(((Weekday) obj).weekday == this.weekday) return true;
         return false;
+    }
+
+    public LinkedList<Medicine> getMedicines() {
+        return medicines;
     }
 }
