@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
     private void initWeekDay(int id, Weekday weekday) {
         LinearLayout layout = findViewById(id);
         ListView lv = (ListView) layout.getChildAt(2);
-        MedicineAdapter madp = new MedicineAdapter(weekday.getMedicines(), getLayoutInflater();
+        MedicineAdapter madp = new MedicineAdapter(weekday.getMedicines(), getLayoutInflater());
         lv.setAdapter(madp);
     }
 
