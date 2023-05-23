@@ -17,7 +17,8 @@ public class MedicineAdapter extends BaseAdapter {
     LayoutInflater inflater;
 
     public MedicineAdapter(LinkedList<Medicine> internalMedList, LayoutInflater inflater) {
-        this.internalMedList = internalMedList;
+        if(internalMedList != null)
+            this.internalMedList = internalMedList;
         this.inflater = inflater;
     }
 
