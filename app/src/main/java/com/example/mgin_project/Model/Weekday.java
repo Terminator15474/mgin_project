@@ -12,7 +12,8 @@ public class Weekday implements Serializable {
 
     public Weekday(WeekdayDesc weekday, Medicine[] medicines) {
         this.weekday = weekday;
-        this.medicines.addAll(Arrays.asList(medicines));
+        if(medicines != null)
+            this.medicines.addAll(Arrays.asList(medicines));
     }
 
     public void addMedicine(Medicine med) {

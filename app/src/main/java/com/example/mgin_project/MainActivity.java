@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // init weekdays
+        initWeekdDays(days);
+
         Date d = new Date();
         int day = d.getDay();
         currentWeekday = WeekdayDescArray.array[day];
@@ -95,6 +98,16 @@ public class MainActivity extends AppCompatActivity {
         ListView lv = (ListView) layout.getChildAt(2);
         MedicineAdapter madp = new MedicineAdapter(weekday.getMedicines(), getLayoutInflater());
         lv.setAdapter(madp);
+    }
+
+    private void initWeekdDays(Weekday[] days) {
+        initWeekDay(R.id.wrapper_mon, days[0]);
+        initWeekDay(R.id.wrapper_tue, days[1]);
+        initWeekDay(R.id.wrapper_wed, days[2]);
+        initWeekDay(R.id.wrapper_thu, days[3]);
+        initWeekDay(R.id.wrapper_fri, days[4]);
+        initWeekDay(R.id.wrapper_sat, days[5]);
+        initWeekDay(R.id.wrapper_sun, days[6]);
     }
 
 }
